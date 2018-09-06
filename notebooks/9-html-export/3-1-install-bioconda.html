@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>2-2-Jupyter-architecture</title><script src="https://unpkg.com/jupyter-js-widgets@2.0.*/dist/embed.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>3-1-install-bioconda</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11775,7 +11775,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Jupyter-Notebook">Jupyter Notebook<a class="anchor-link" href="#Jupyter-Notebook">&#182;</a></h1>
+<h1 id="Building-a-Bioinformatics-Workflow-with-Jupyter-&amp;-Anaconda">Building a Bioinformatics Workflow with Jupyter &amp; Anaconda<a class="anchor-link" href="#Building-a-Bioinformatics-Workflow-with-Jupyter-&amp;-Anaconda">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11783,8 +11783,15 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>(Walkthrough; 15 min)</p>
-<p>R. Burke Squires</p>
+<h2 id="Installing-Bioinformatics-Software-with-bioconda">Installing Bioinformatics Software with <code>bioconda</code><a class="anchor-link" href="#Installing-Bioinformatics-Software-with-bioconda">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Burke Squires</p>
 <p><a href="https://github.com/burkesquires">https://github.com/burkesquires</a></p>
 
 </div>
@@ -11803,7 +11810,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Getting-In-and-Getting-Out-(of-the-Jupyter-Notebook)!">Getting In and Getting Out (of the Jupyter Notebook)!<a class="anchor-link" href="#Getting-In-and-Getting-Out-(of-the-Jupyter-Notebook)!">&#182;</a></h2><p>Once you have the Anaconda python package installed, in your user folder there shold be an "anaconda" (or "anaconda3"?) directory.</p>
+<p><img src="attachment:bioconda.png" alt="bioconda.png"></p>
 
 </div>
 </div>
@@ -11812,176 +11819,340 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="To-start-the-Jupyter-Notebook">To start the Jupyter Notebook<a class="anchor-link" href="#To-start-the-Jupyter-Notebook">&#182;</a></h3><ol>
-<li><p>From Anaconda-Navigator</p>
+<h2 id="Setting-up-bioconda">Setting up <code>bioconda</code><a class="anchor-link" href="#Setting-up-bioconda">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://bioconda.github.io/">Bioconda</a> is "a channel for the conda package manager specializing in bioinformatics software. Bioconda consists of:</p>
 <ul>
-<li>Open <em>anaconda3</em> directory in your user folder.</li>
-<li>Double-click the <code>Anaconda-Navigator</code> program</li>
-<li>To launch the Jupyter Notebook, click the <em>launch</em> button in the Anaconda-Navigator interface</li>
-<li>A Terminal windows will open and the default web browser window will also open displying the Jupyter Dashboard</li>
-<li>From the Jupyter dashboard you can create new Jupyter Notebooks or open existing ones.</li>
+<li>a repository of recipes hosted on GitHub</li>
+<li>a build system that turns these recipes into conda packages</li>
+<li>a repository of more than 3000 bioinformatics packages ready to use with conda install</li>
+<li>Over 250 contributors that add, modify, update and maintain the recipes</li>
+</ul>
+<p>(<strong>Note</strong>:The NIH's own <a href="https://github.com/daler">Ryan Dale</a> is a founding member of the <code>bioconda</code> project)</p>
+<p>The conda package manager makes installing software a vastly more streamlined process. Conda is a combination of other package managers you may have encountered, such as pip, CPAN, CRAN, Bioconductor, apt-get, and homebrew. Conda is both language- and OS-agnostic, and can be used to install C/C++, Fortran, Go, R, Python, Java etc programs on Linux, Mac OSX, and Windows.</p>
+<p>Conda allows separation of packages into repositories, or channels. The main defaults channel has a large number of common packages. Users can add additional channels from which to install software packages not available in the defaults channel. Bioconda is one such channel specializing in bioinformatics software.</p>
+<p>Bioconda has been acknowledged by NATURE in their <a href="http://blogs.nature.com/naturejobs/2017/11/03/techblog-bioconda-promises-to-ease-bioinformatics-software-installation-woes/">technology blog</a>.</p>
+<p>Each package added to Bioconda also has a corresponding Docker BioContainer automatically created and uploaded to Quay.io."</p>
+<p>See the ailable packages <a href="https://bioconda.github.io/recipes.html">here</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.-Install-conda">1. Install conda<a class="anchor-link" href="#1.-Install-conda">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Bioconda requires the conda package manager to be installed. If you have an Anaconda Python installation, you already have it. Otherwise, the best way to install it is with the Miniconda package. The Python 3 version is recommended.</p>
+<p><strong>Note</strong>: If you have installed the Anaconda distribution you have already taken care of this step!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.-Set-up-channels">2. Set up channels<a class="anchor-link" href="#2.-Set-up-channels">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After installing conda you will need to add the bioconda channel as well as the other channels bioconda depends on. It is important to add them in this order so that the priority is set correctly (that is, bioconda is highest priority).</p>
+<p>The conda-forge channel contains many general-purpose packages not already found in the defaults channel. The r channel is only included due to backward compatibility. It is not mandatory, but without the r channel packages compiled against R 3.3.1 might not work.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="o">!</span>~/anaconda3/bin/conda config --add channels defaults
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Warning: &#39;defaults&#39; already in &#39;channels&#39; list, moving to the top
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="o">!</span>~/anaconda3/bin/conda config --add channels conda-forge
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Warning: &#39;conda-forge&#39; already in &#39;channels&#39; list, moving to the top
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>    <span class="o">!</span>~/anaconda3/bin/conda config --add channels bioconda
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Warning: &#39;bioconda&#39; already in &#39;channels&#39; list, moving to the top
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.-Install-packages">3. Install packages<a class="anchor-link" href="#3.-Install-packages">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Browse the packages to see what’s available.</p>
+<p>Bioconda is now enabled, so any packages on the bioconda channel can be installed into the current conda environment:</p>
+
+<pre><code>conda install bwa
+
+</code></pre>
+<p>Or a new environment can be created:</p>
+
+<pre><code>conda create -n aligners bwa bowtie hisat star</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We will install three softwares: <code>bwa</code>, <code>samtools</code>, and <code>bcftools</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>conda install -y bwa
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Solving environment: failed
+
+CondaHTTPError: HTTP 000 CONNECTION FAILED for url &lt;https://conda.anaconda.org/bioconda/noarch/repodata.json&gt;
+Elapsed: -
+
+An HTTP error occurred when trying to retrieve this URL.
+HTTP errors are often intermittent, and a simple retry will get you on your way.
+ConnectionError(MaxRetryError(&#34;HTTPSConnectionPool(host=&#39;conda.anaconda.org&#39;, port=443): Max retries exceeded with url: /bioconda/noarch/repodata.json (Caused by NewConnectionError(&#39;&lt;urllib3.connection.VerifiedHTTPSConnection object at 0x10911b828&gt;: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known&#39;,))&#34;,),)
+
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>conda install -y samtools
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>conda install -y bcftools
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Note</strong>: Remember to restart the kernel in a notebook if you have made changes using conda.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="biopython"><code>biopython</code><a class="anchor-link" href="#biopython">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>While we are not going to be using it today, another excellent python bioinformatics resource is the <a href="http://biopython.org/DIST/docs/tutorial/Tutorial.html">biopython</a> project!</p>
+<p>"The Biopython Project is an international association of developers of freely available Python (<a href="http://www.python.org">http://www.python.org</a>) tools for computational molecular biology."</p>
+<p><img src="attachment:biopython_logo.svg" alt="biopython_logo.svg"></p>
+<p>"What can I find in the Biopython package</p>
+<p>The main Biopython releases have lots of functionality, including:</p>
+<ul>
+<li>The ability to parse bioinformatics files into Python utilizable data structures, including support for the following formats:<ul>
+<li>Blast output – both from standalone and WWW Blast</li>
+<li>Clustalw</li>
+<li>FASTA</li>
+<li>GenBank</li>
+<li>PubMed and Medline</li>
+<li>ExPASy files, like Enzyme and Prosite</li>
+<li>SCOP, including ‘dom’ and ‘lin’ files</li>
+<li>UniGene</li>
+<li>SwissProt</li>
 </ul>
 </li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>NOTE</strong></p>
-<ul>
-<li>It is <strong>NOT</strong> possible to double click a Jupyter Notebook to open it.*</li>
-<li>The Terminal window openned by the Jupyter software <strong>MUST</strong> remain open while using the Jupyter Notebook.</li>
-</ul>
-<p>*You can download the Pineapple program from github that enables double-click launch of Jupyter Notebooks...macOS only. The <em>nteract</em> project can also be used to work with Jupyter Notebooks.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Another way to launch the Jupyter notebook is to do it from the command line by typing:</p>
-
-<pre><code>jupyter notebook</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The notebook will open in your default browser. You can also specify which browser to use:</p>
-
-<pre><code>jupyter notebook --browser=chrome</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>By default, the notebook server starts on port 8888, or, if this port is not available, to the next available one, such as 9999. You may also specify a port manually:</p>
-
-<pre><code>jupyter notebook --port 9999</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Browser-Compatibility">Browser Compatibility<a class="anchor-link" href="#Browser-Compatibility">&#182;</a></h4><p>The Jupyter Notebook is officially supported by the latest stable versions of the following browsers:</p>
-<ul>
-<li>Chrome</li>
-<li>Safari</li>
-<li>Firefox</li>
-</ul>
-<p>The is mainly due to the notebook’s usage of WebSockets and the flexible box model.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="To-close-a-Jupyter-Notebook">To close a Jupyter Notebook<a class="anchor-link" href="#To-close-a-Jupyter-Notebook">&#182;</a></h3><ul>
-<li>From the (Jupyter) <em>File</em> menu select close and halt on any open notebooks<ul>
-<li>Or from the <em>Running</em> tab in the Jupyter Deshboard click the running tab and shutdown any running notebooks.</li>
+<li>Files in the supported formats can be iterated over record by record or indexed and accessed via a Dictionary interface.</li>
+<li>Code to deal with popular on-line bioinformatics destinations such as:<ul>
+<li>NCBI – Blast, Entrez and PubMed services</li>
+<li>ExPASy – Swiss-Prot and Prosite entries, as well as Prosite searches</li>
 </ul>
 </li>
-<li>Close the Jupyter Dashboard (or quit your browser)</li>
-<li>Close the Terminal window hosting the Jupyter server or you can kill Jupyter by hitting “Ctrl + C” in the terminal window</li>
+<li>Interfaces to common bioinformatics programs such as:<ul>
+<li>Standalone Blast from NCBI</li>
+<li>Clustalw alignment program</li>
+<li>EMBOSS command line tools</li>
 </ul>
+</li>
+<li>A standard sequence class that deals with sequences, ids on sequences, and sequence features.</li>
+<li>Tools for performing common operations on sequences, such as translation, transcription and weight calculations.</li>
+<li>Code to perform classification of data using k Nearest Neighbors, Naive Bayes or Support Vector Machines.</li>
+<li>Code for dealing with alignments, including a standard way to create and deal with substitution matrices.</li>
+<li>Code making it easy to split up parallelizable tasks into separate processes.</li>
+<li>GUI-based programs to do basic sequence manipulations, translations, BLASTing, etc.</li>
+<li>Extensive documentation and help with using the modules, including this file, on-line wiki documentation, the web site, and the mailing list.</li>
+<li>Integration with BioSQL, a sequence database schema also supported by the BioPerl and BioJava projects."</li>
+</ul>
+<p>With <code>conda</code> installing biopython is as easy as <code>conda install biopython</code></p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Jupyter-Architecture">Jupyter Architecture<a class="anchor-link" href="#Jupyter-Architecture">&#182;</a></h2><p>The Jupyter architecture is comprised of three primary components: kernel, notebook document format, and an interactive computing protocol.<a href="jupyter.org">Source</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Kernels">Kernels<a class="anchor-link" href="#Kernels">&#182;</a></h3><p>"Kernels are processes that run interactive code in a particular programming language and return output to the user. Kernels also respond to tab completion and introspection requests." There are kernels for python 3, python 2, R, Julia, javascript, perl, and <a href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">more</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-Notebook-Document-Format">The Notebook Document Format<a class="anchor-link" href="#The-Notebook-Document-Format">&#182;</a></h3><p>"Jupyter Notebooks are an open document format based on JSON. They contain a complete record of the user's sessions and embed code, narrative text, equations and rich output."</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Interactive-Computing-Protocol">Interactive Computing Protocol<a class="anchor-link" href="#Interactive-Computing-Protocol">&#182;</a></h3><p>"The Notebook communicates with computational Kernels using the Interactive Computing Protocol, an open network protocol based on JSON data over ZMQ and WebSockets."</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src='../images/notebook_components.png'></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Jupyter-Dashboard">Jupyter Dashboard<a class="anchor-link" href="#Jupyter-Dashboard">&#182;</a></h2><p>When you first launch the Jupyter Notebook a web browser window will open the Jupyter Dashboard.</p>
-<p><img src='../images/anaconda-dashboard.png'></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Anatomy-of-a-Jupyter-Notebook">Anatomy of a Jupyter Notebook<a class="anchor-link" href="#Anatomy-of-a-Jupyter-Notebook">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-Jupyter-Notebook">The Jupyter Notebook<a class="anchor-link" href="#The-Jupyter-Notebook">&#182;</a></h3><p><img src='../images/notebook_components.png'></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Jupyterlab">Jupyterlab<a class="anchor-link" href="#Jupyterlab">&#182;</a></h2>
 </div>
 </div>
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>2-9-3-Intro_to_binder</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>0_Jupyter_training</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11775,18 +11775,16 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introduction-to-Binder">Introduction to Binder<a class="anchor-link" href="#Introduction-to-Binder">&#182;</a></h1><p><strong>Authors: Chris Holdgraf, M Pacer</strong></p>
-<h2 id="Things-You'll-Need-to-Complete-This-Tutorial">Things You'll Need to Complete This Tutorial<a class="anchor-link" href="#Things-You'll-Need-to-Complete-This-Tutorial">&#182;</a></h2><p>This lesson uses packages that you've already downloaded along with the Anaconda distribution of Python. It expects that you have a repository on GitHub with a Jupyter Notebook inside.</p>
-<h2 id="Overview">Overview<a class="anchor-link" href="#Overview">&#182;</a></h2><ul>
-<li>Teaching: 10 min</li>
-<li>Exercises: 10 min</li>
-</ul>
-<h2 id="Questions">Questions<a class="anchor-link" href="#Questions">&#182;</a></h2><ul>
-<li>What does it mean for code to "depend" on software?</li>
-<li>How can we explicitly define the dependencies for our code?</li>
-<li>How can we use Binder to share reproducible repositories?</li>
-</ul>
-<h2 id="Objectives">Objectives<a class="anchor-link" href="#Objectives">&#182;</a></h2><p>Create a requirements file for our repository using the GitHub UI, then build a Binder from this repository and copy the sharable link.</p>
+<h1 id="Jupyter-Notebook-&#8211;-Enabling-Collaborative,-Reproducible-Science-for-All">Jupyter Notebook &#8211; Enabling Collaborative, Reproducible Science for All<a class="anchor-link" href="#Jupyter-Notebook-&#8211;-Enabling-Collaborative,-Reproducible-Science-for-All">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>R. Burke Squires</p>
+<p><a href="https://github.com/burkesquires">https://github.com/burkesquires</a></p>
 
 </div>
 </div>
@@ -11795,7 +11793,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Sharing-an-interactive-repository-with-Binder">Sharing an interactive repository with Binder<a class="anchor-link" href="#Sharing-an-interactive-repository-with-Binder">&#182;</a></h1><p><img src="https://mybinder.org/static/logo.svg?v=f9f0d927b67cc9dc99d788c822ca21c0" style="float:left; height:150px" /></p>
+<hr>
 
 </div>
 </div>
@@ -11804,8 +11802,50 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="In-2018,-the-Atlantic-magazine-declared-that...">In 2018, the <em>Atlantic</em> magazine declared that...<a class="anchor-link" href="#In-2018,-the-Atlantic-magazine-declared-that...">&#182;</a></h2><p><img src="attachment:Screen%20Shot%202018-08-12%20at%202.48.01%20PM.png" alt="Screen%20Shot%202018-08-12%20at%202.48.01%20PM.png"></p>
+<p><a href="https://www.theatlantic.com/science/archive/2018/04/the-scientific-paper-is-obsolete/556676/">https://www.theatlantic.com/science/archive/2018/04/the-scientific-paper-is-obsolete/556676/</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Scientific paper is essentially unchanged since it's creation in the 1600's.</p>
+<p>What are the major parts of a "standard" scientific paper??</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>BUT...</p>
+<p><em>The Scientist</em> published a paper entitled <em>The Death of the Scientific Paper</em> is 2006!</p>
+<p><a href="https://www.the-scientist.com/opinion-old/the-death-of-the-scientific-paper-47251">https://www.the-scientist.com/opinion-old/the-death-of-the-scientific-paper-47251</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="There-are-Alternatives">There are Alternatives<a class="anchor-link" href="#There-are-Alternatives">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1988">1988<a class="anchor-link" href="#1988">&#182;</a></h2><h3 id="Wolfram-Mathematica">Wolfram Mathematica<a class="anchor-link" href="#Wolfram-Mathematica">&#182;</a></h3><p>"Wolfram Mathematica (usually termed Mathematica) is a modern technical computing system spanning most areas of technical computing — including neural networks, machine learning, image processing, geometry, data science, visualizations, and others" Wikipedia</p>
+<p>Two parts:</p>
 <ul>
-<li>GitHub is a great service for sharing your code, but the materials in a GitHub repository are static.</li>
+<li>the kernel - interprets expressions and returns results</li>
+<li>the front end (notebook)</li>
 </ul>
 
 </div>
@@ -11815,8 +11855,39 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Mathematica-Notebook">Mathematica Notebook<a class="anchor-link" href="#Mathematica-Notebook">&#182;</a></h3><p><a href="http://www.wolfram.com/notebooks/">http://www.wolfram.com/notebooks/</a></p>
 <ul>
-<li>How could you <em>run</em> a GitHub repository in your browser?</li>
+<li>Designed by Theodore Gray in 1988</li>
+<li>Provides a GUI, allows for creation and editing of notebooks</li>
+<li>Notebooks contain<ul>
+<li>program code </li>
+<li>formatted text </li>
+</ul>
+</li>
+<li>Results including <ul>
+<li>typeset mathematics </li>
+<li>graphics </li>
+<li>GUI components </li>
+<li>tables</li>
+<li>sounds</li>
+</ul>
+</li>
+</ul>
+<p>The notebook implements a form of <em>literate programming</em> devised by Donald E. Knuth, an American Computer scientist; creator of Tex, predecessor of LaTeX</p>
+<p>As we will learn, this sounds a LOT like a Jupyter notebook!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Why-did-Mathematica-notebooks-not-take-off"><strong>Why did Mathematica notebooks not take off</strong><a class="anchor-link" href="#Why-did-Mathematica-notebooks-not-take-off">&#182;</a></h3><p>The <em>Atlantic</em> article asks why Jupyter succeed where Mathematica failed.</p>
+<p>"The obvious contrast is between the proprietary world of Wolfram and the open-source model of the software ecosystem that Jupyter mobilizes." Romer</p>
+<ul>
+<li>Wolfram is <a href="https://www.wolfram.com/mathematica/pricing/government-individuals.php">commercial</a>, Jupyter is open-source</li>
+<li>Wolfram only supports a single language, Jupyter supports 40+ languages</li>
 </ul>
 
 </div>
@@ -11826,17 +11897,8 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Running-code-is-more-complicated-than-displaying-code">Running code is more complicated than displaying code<a class="anchor-link" href="#Running-code-is-more-complicated-than-displaying-code">&#182;</a></h2><p>To run code, you need (at least) the following things:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Hardware on which to run code</li>
+<h2 id="2001">2001<a class="anchor-link" href="#2001">&#182;</a></h2><ul>
+<li>IPython is created</li>
 </ul>
 
 </div>
@@ -11846,13 +11908,117 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2011">2011<a class="anchor-link" href="#2011">&#182;</a></h2><ul>
+<li><a href="https://sites.google.com/site/beyondthepdf/">"Beyond the PDF"</a> workshop hosted by Phil Bourne</li>
+<li>Jupyter notebook first created</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2014">2014<a class="anchor-link" href="#2014">&#182;</a></h2><ul>
+<li>Pat Schloss - Nature Microbiome ipython notebook as supplementary material</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Today">Today<a class="anchor-link" href="#Today">&#182;</a></h2><p>What is the status of Jupyter notebooks today?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Google-Trends">Google Trends<a class="anchor-link" href="#Google-Trends">&#182;</a></h4><p>Jupyter notebooks</p>
+<p><a href="https://trends.google.com/trends/explore?date=all&amp;q=jupyter">https://trends.google.com/trends/explore?date=all&amp;q=jupyter</a></p>
+<p>Comparison - Past 5 Years</p>
+<p><a href="https://trends.google.com/trends/explore?date=today%205-y&amp;q=jupyter,mathematica,r%20notebook,r%20markdown,rstudio">https://trends.google.com/trends/explore?date=today%205-y&amp;q=jupyter,mathematica,r%20notebook,r%20markdown,rstudio</a></p>
+<p>Comparison - All years</p>
+<p><a href="https://trends.google.com/trends/explore?date=all&amp;q=jupyter,mathematica,r%20notebook,r%20markdown,rstudio">https://trends.google.com/trends/explore?date=all&amp;q=jupyter,mathematica,r%20notebook,r%20markdown,rstudio</a></p>
+<p>What do we see in the graphs?
+What do you think causes the ups and downs in the mathematica?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="How-Do-Jupter-Notebooks-Help-Perform-&amp;-Communicate-Science?">How Do Jupter Notebooks Help Perform &amp; Communicate Science?<a class="anchor-link" href="#How-Do-Jupter-Notebooks-Help-Perform-&amp;-Communicate-Science?">&#182;</a></h2><p>Jupyter Notebooks help perform and communicate science in many phases:</p>
 <ul>
-<li>All the software needed to run your code, including:<ol>
-<li>The code itself.</li>
-<li>Hardware for running your programming language</li>
-<li>Something to run your code (e.g., <code>python</code>, <code>r</code>)</li>
-<li>Packages needed to run the code (e.g., <code>pandas</code>, <code>matplotlib</code>)</li>
-</ol>
+<li>Experimental design phase</li>
+<li>Grant writing phase</li>
+<li>Analysis phase</li>
+<li>Collaboration phase</li>
+<li>Publication phase</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Experimental-Design-Phase:">Experimental Design Phase:<a class="anchor-link" href="#Experimental-Design-Phase:">&#182;</a></h3><ul>
+<li>Beging writing narrative that will drive:<ul>
+<li>Grant application</li>
+<li>Actual research </li>
+<li>A possible scientifi paper</li>
+</ul>
+</li>
+<li>Assist in preliminary data analysis</li>
+<li>Keeps a record of all thoughts and steps in the process</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Grant-Writing-Phase:">Grant Writing Phase:<a class="anchor-link" href="#Grant-Writing-Phase:">&#182;</a></h3><ul>
+<li>Take record of what was written</li>
+<li>Clean it up</li>
+<li>Use output from preliminary data analysis in application</li>
+<li>Expand analysis if resubmitting grant</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Grant-received...-:-)">Grant received... :-)<a class="anchor-link" href="#Grant-received...-:-)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Analysis-Phase:">Analysis Phase:<a class="anchor-link" href="#Analysis-Phase:">&#182;</a></h3><ul>
+<li>Jupyter notebook are a record of the though process and exploratory workflow</li>
+<li>Using existing Notebook to communicate project to PostDoc or grad student who will do the work</li>
+<li>Enables researcher to see preliminary data analysis and teh narative that surronds it</li>
+<li><p>Combine existing tools and scripts into a single workflow</p>
+</li>
+<li><p>NOTE: I start by using a single notebook for my workflow, creating a new cell for each change or iteration of my analysis. Only after I am satisfied with the results of my analysis, do I duplicate my notebook and CAREFULLY delete cells, which are not part of the final workflow.</p>
 </li>
 </ul>
 
@@ -11863,165 +12029,9 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Binder-provides-these-things">Binder provides these things<a class="anchor-link" href="#Binder-provides-these-things">&#182;</a></h2><p>Binder is a service that provides your code, the hardware, and the software.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>You can create a link to a <strong>live, interactive</strong> version of your code.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Here's an example of a Binder link:</p>
-<p><a href="https://mybinder.org/v2/gh/jakevdp/PythonDataScienceHandbook/master?filepath=notebooks%2FIndex.ipynb">https://mybinder.org/v2/gh/jakevdp/PythonDataScienceHandbook/master?filepath=notebooks%2FIndex.ipynb</a></p>
-<p>Clicking it will create a <em>live</em> version of Jake van der Plas' Datascience Handbook repository:</p>
-<p><a href="https://github.com/jakevdp/PythonDataScienceHandbook">https://github.com/jakevdp/PythonDataScienceHandbook</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Note</strong>: The Binder link has a very similar structure to the github repository link!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Build-your-Binder">Build your Binder<a class="anchor-link" href="#Build-your-Binder">&#182;</a></h2><p>To build a Binder go to <code>mybinder.org</code> and paste in the URL of your repository, like so:</p>
-<p><img src="../fig/binder_gui.png" /></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Share-your-Binder-link-with-others">Share your Binder link with others<a class="anchor-link" href="#Share-your-Binder-link-with-others">&#182;</a></h2><p>Now that you've got a Binder, you can share a link that will let others interact with it.</p>
-<p>This link is listed in the Binder GUI and should update itself as you fill in the forms. Copy the link and share it with your friends!</p>
-<p><img src="../fig/binder_link.png" /></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="A-README.md-for-the-computer">A README.md for the computer<a class="anchor-link" href="#A-README.md-for-the-computer">&#182;</a></h2><p>If you are using other packages, you need tell Binder what to do!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We need to create a file to specify which software we need.</p>
-<p>In python, that file is called <code>requirements.txt</code>.</p>
-<p>We also need to include any additional resources (e.g., any data files we need like <code>gapminder.csv</code>).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Create-a-new-file">Create a new file<a class="anchor-link" href="#Create-a-new-file">&#182;</a></h2><p>Using the GitHub GUI, click the "create new file" button. This will open a text editor where you can create a new file in your GitHub repository.</p>
-<p><img src="../fig/click_new_file.png" /></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Add-software-dependencies-to-this-file">Add software dependencies to this file<a class="anchor-link" href="#Add-software-dependencies-to-this-file">&#182;</a></h2><p>In the "new file" GUI, we'll write down the software needed to run this code.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In our case, this means <code>matplotlib</code> and <code>pandas</code>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We'll call this file <code>requirements.txt</code>, as these are the <strong>requirements</strong> for running the code.</p>
-<p><img src="../fig/populate_file.png" /></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Now-build-your-Binder">Now build your Binder<a class="anchor-link" href="#Now-build-your-Binder">&#182;</a></h2><p>To build a Binder go to <code>mybinder.org</code> &amp; click <code>launch</code> to build your Binder</p>
-<p>Binder will find your <code>requirements.txt</code> and provides the software for running your code.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This may take a while!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>When it's ready, Binder will link you to a live Jupyter Notebook session running in the cloud!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Wrapping-up">Wrapping up<a class="anchor-link" href="#Wrapping-up">&#182;</a></h2><p>In this section we started with a static GitHub repository with Jupyter Notebooks inside. We then...</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Created a file called <code>requirements.txt</code> that specified which software was needed to run our code.</li>
-<li>Used the <code>mybinder.org</code> interface to build a Binder from this repository.</li>
-<li>Created a Binder link in order to share our interactive repository with others.</li>
+<h3 id="Collaboration-Phase:">Collaboration Phase:<a class="anchor-link" href="#Collaboration-Phase:">&#182;</a></h3><ul>
+<li>Sending a Jupyter notebook as a single document to a collaborator or to PI</li>
+<li>They can rerun analysis, edit, remove or add to it (if they have teh software installed)</li>
 </ul>
 
 </div>
@@ -12031,11 +12041,102 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Next-steps">Next steps<a class="anchor-link" href="#Next-steps">&#182;</a></h2><p>There are many more workflows that you can enable with Binder, and we recommend checking out a list of example Binder repositories at:</p>
-<p><a href="https://github.com/binder-examples/">https://github.com/binder-examples/</a></p>
+<h3 id="Communication-Phase">Communication Phase<a class="anchor-link" href="#Communication-Phase">&#182;</a></h3><ul>
+<li>Use the notebook as the start of a manuscript</li>
+<li>Examples<ul>
+<li>Reproducible Science Curriculum - <a href="https://reproducible-science-curriculum.github.io/publication-RR-Jupyter/aio.html">Publication</a></li>
+<li><a href="https://sylvaindeville.net/2015/07/17/writing-academic-papers-in-plain-text-with-markdown-and-jupyter-notebook/">Jupyter notebook manuscript workflow</a></li>
+</ul>
+</li>
+<li>Sumbit notebook as suplementsry material</li>
+<li>Future<ul>
+<li>Submit notebook as actual manuscript?</li>
+</ul>
+</li>
+</ul>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Drivers-of-Jupyter-Notebooks">Drivers of Jupyter Notebooks<a class="anchor-link" href="#Drivers-of-Jupyter-Notebooks">&#182;</a></h2><h3 id="Reproducible-Science">Reproducible Science<a class="anchor-link" href="#Reproducible-Science">&#182;</a></h3><p>Jupyter notebooks referenced in Pubmed Central:</p>
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/?term=(%22.ipynb%22+OR+%22jupyter%22+OR+%22ipython+notebook%22">https://www.ncbi.nlm.nih.gov/pmc/?term=(%22.ipynb%22+OR+%22jupyter%22+OR+%22ipython+notebook%22</a>)</p>
+<h3 id="Data-Science">Data Science<a class="anchor-link" href="#Data-Science">&#182;</a></h3><p><a href="https://trends.google.com/trends/explore?date=today%205-y&amp;q=data%20science,jupyter">https://trends.google.com/trends/explore?date=today%205-y&amp;q=data%20science,jupyter</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="References">References<a class="anchor-link" href="#References">&#182;</a></h3><ol>
+<li>Somers, James. "The Scientific Paper Is Obsolete". The Atlantic. Retrieved 2018-04-10.</li>
+<li>Romer, Paul. "Jupyter, Mathematica, and the Future of the Research Paper" <a href="https://paulromer.net/jupyter-mathematica-and-the-future-of-the-research-paper/">https://paulromer.net/jupyter-mathematica-and-the-future-of-the-research-paper/</a></li>
+<li>Victor, Brett. <a href="http://worrydream.com/ScientificCommunicationAsSequentialArt/">Scientific Communication As Sequential Art</a>. May 24, 2011</li>
+<li>Randles BM, Pasquetto IV, JCDL MG, ACM 2, 2017. <a href="https://arxiv.org/pdf/1804.05492.pdf"><em>Using the Jupyter Notebook as a tool for open science: An empirical study.</em></a></li>
+<li><a href="https://sylvaindeville.net/2015/07/17/writing-academic-papers-in-plain-text-with-markdown-and-jupyter-notebook/">https://sylvaindeville.net/2015/07/17/writing-academic-papers-in-plain-text-with-markdown-and-jupyter-notebook/</a></li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>jupyter nbconvert 0_Jupyter_training.ipynb --to slides --post serve --SlidesExporter.reveal_theme<span class="o">=</span>simple
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[NbConvertApp] Converting notebook 0_Jupyter_training.ipynb to slides
+[NbConvertApp] Writing 268039 bytes to 0_Jupyter_training.slides.html
+[NbConvertApp] Redirecting reveal.js requests to https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0
+Serving your slides at http://127.0.0.1:8000/0_Jupyter_training.slides.html
+Use Control-C to stop this server
+WARNING:tornado.access:404 GET /custom.css (127.0.0.1) 1.21ms
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>

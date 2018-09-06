@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>2-8-Jupyter-magics</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>1-1-Anaconda-Overview</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11775,7 +11775,8 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="The-Cell-Magics-in-IPython">The Cell Magics in <code>IPython</code><a class="anchor-link" href="#The-Cell-Magics-in-IPython">&#182;</a></h1>
+<p><img src="attachment:anaconda-logo.png" alt="anaconda-logo.png"></p>
+
 </div>
 </div>
 </div>
@@ -11783,7 +11784,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>(Hands on; 15 min)</p>
+<p>(Walkthrough; 30 min)</p>
 <p>R. Burke Squires</p>
 <p><a href="https://github.com/burkesquires">https://github.com/burkesquires</a></p>
 
@@ -11794,202 +11795,52 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>IPython has a system of commands we call 'magics' that provide effectively a mini command language that is orthogonal to the syntax of Python and is extensible by the user with new commands.  Magics are meant to be typed interactively, so they use command-line conventions, such as using whitespace for separating arguments, dashes for options and other conventions typical of a command-line environment.</p>
-<p>Magics come in two kinds:</p>
+<p>Sources: <a href="https://github.com/ccwang002">Liang-Bo Wang</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Anaconda-Python/R-Distribution"><strong><a href="https://www.anaconda.com/distribution/">Anaconda Python/R Distribution</a></strong><a class="anchor-link" href="#Anaconda-Python/R-Distribution">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Is a "free and open source distribution of the Python and R programming languages for data science and machine learning related applications (large-scale data processing, predictive analytics, scientific computing), that aims to simplify package management and deployment. Package versions are managed by the package management system <code>conda</code>. The Anaconda distribution is used by over 6 million users, and it includes more than 250 popular data science packages suitable for Windows, Linux, and MacOS." [Wikipedia]</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-is-included-in-Anaconda?">What is included in Anaconda?<a class="anchor-link" href="#What-is-included-in-Anaconda?">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Line magics: these are commands prepended by one <code>%</code> character and whose arguments only extend to the end of the current line.</li>
-<li>Cell magics: these use <em>two</em> percent characters as a marker (<code>%%</code>), and they receive as argument <em>both</em> the current line where they are declared and the whole body of the cell.  Note that cell magics can <em>only</em> be used as the first line in a cell, and as a general principle they can't be 'stacked' (i.e. you can only use one cell magic per cell).  A few of them, because of how they operate, can be stacked, but that is something you will discover on a case by case basis.</li>
+<li>Python programming language - <strong>python 3.X</strong></li>
+<li>Python packages / libraries - <strong>pandas, numpy, matplotlib, <a href="https://docs.anaconda.com/anaconda/packages/pkg-docs">etc</a></strong>
+(<a href="https://docs.anaconda.com/anaconda/packages/r-language-pkg-docs">https://docs.anaconda.com/anaconda/packages/r-language-pkg-docs</a>)</li>
+<li><strong>conda</strong> - a package management</li>
+<li><strong>Anaconda Navigator</strong> - Desktop GUI</li>
 </ul>
-<p>The <code>%lsmagic</code> magic is used to list all available magics, and it will show both line and cell magics currently defined:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">lsmagic</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Since in the introductory section we already covered the most frequently used line magics, we will focus here on the cell magics, which offer a great amount of power.</p>
-<p>Let's load matplotlib and numpy so we can use numerics/plotting at will later on.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="-Some-simple-cell-magics"> Some simple cell magics<a class="anchor-link" href="#-Some-simple-cell-magics">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Timing the execution of code; the 'timeit' magic exists both in line and cell form:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> np.linalg.eigvals(np.random.rand(100,100))
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span> a = np.random.rand(100, 100)
-np.linalg.eigvals(a)
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>%%capture</code> magic can be used to capture the stdout/err of any block of python code, either to discard it (if it's noise to you) or to store it in a variable for later use:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">capture</span> capt
-from __future__ import print_function
-import sys
-print(&#39;Hello stdout&#39;)
-print(&#39;and stderr&#39;, file=sys.stderr)
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">capt</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">capt</span><span class="o">.</span><span class="n">stderr</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">capt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>%%writefile</code> magic is a very useful tool that writes the cell contents as a named file:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">writefile</span> foo.py
-print(&#39;Hello world&#39;)
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> foo
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="-Magics-for-running-code-under-other-interpreters"> Magics for running code under other interpreters<a class="anchor-link" href="#-Magics-for-running-code-under-other-interpreters">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>IPython has a <code>%%script</code> cell magic, which lets you run a cell in
-a subprocess of any interpreter on your system, such as: bash, ruby, perl, zsh, R, etc.</p>
-<p>It can even be a script of your own, which expects input on stdin.</p>
+<p>Additional options:</p>
+<ul>
+<li>R programming language (additional install)</li>
+<li>R packages / libraries - [(see which ones)]</li>
+</ul>
 
 </div>
 </div>
@@ -11998,85 +11849,7 @@ a subprocess of any interpreter on your system, such as: bash, ruby, perl, zsh, 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To use it, simply pass a path or shell command to the program you want to run on the <code>%%script</code> line,
-and the rest of the cell will be run by that script, and stdout/err from the subprocess are captured and displayed.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">script</span> python
-import sys
-print &#39;hello from Python %s&#39; % sys.version
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">script</span> python3
-import sys
-print(&#39;hello from Python: %s&#39; % sys.version)
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>IPython also creates aliases for a few common interpreters, such as bash, ruby, perl, etc.</p>
-<p>These are all equivalent to <code>%%script &lt;name&gt;</code></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">ruby</span>
-<span class="nb">puts</span> <span class="s2">&quot;Hello from Ruby </span><span class="si">#{</span><span class="no">RUBY_VERSION</span><span class="si">}</span><span class="s2">&quot;</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash
-<span class="nb">echo</span> <span class="s2">&quot;hello from </span><span class="nv">$BASH</span><span class="s2">&quot;</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exercise:-write-your-own-script-that-numbers-input-lines">Exercise: write your own script that numbers input lines<a class="anchor-link" href="#Exercise:-write-your-own-script-that-numbers-input-lines">&#182;</a></h2>
+<h2 id="Anaconda-Navigator">Anaconda-Navigator<a class="anchor-link" href="#Anaconda-Navigator">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -12084,32 +11857,8 @@ print(&#39;hello from Python: %s&#39; % sys.version)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Write a file, called <code>lnum.py</code>, such that the following cell works as shown (hint: don't forget about the executable bit!):</p>
+<p><img src="attachment:anaconda-navigator-apps-1.png" alt="anaconda-navigator-apps-1.png"></p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">script</span> ./lnum.py
-my first line
-my second
-more
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Capturing-output">Capturing output<a class="anchor-link" href="#Capturing-output">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -12117,60 +11866,7 @@ more
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can also capture stdout/err from these subprocesses into Python variables, instead of letting them go directly to stdout/err</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash
-<span class="nb">echo</span> <span class="s2">&quot;hi, stdout&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;hello, stderr&quot;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>%%bash --out output --err error
-<span class="nb">echo</span> <span class="s2">&quot;hi, stdout&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;hello, stderr&quot;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Background-Scripts">Background Scripts<a class="anchor-link" href="#Background-Scripts">&#182;</a></h2>
+<h3 id="What-if-I-do-not-want-all-of-that?">What if I do not want all of that?<a class="anchor-link" href="#What-if-I-do-not-want-all-of-that?">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -12178,66 +11874,219 @@ more
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>These scripts can be run in the background, by adding the <code>--bg</code> flag.</p>
-<p>When you do this, output is discarded unless you use the <code>--out/err</code>
-flags to store output as above.</p>
+<p>Install <a href="https://conda.io/miniconda.html">miniconda</a> instead.</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">ruby</span> <span class="o">--</span><span class="n">bg</span> <span class="o">--</span><span class="n">out</span> <span class="n">ruby_lines</span>
-<span class="k">for</span> <span class="n">n</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="mi">10</span>
-    <span class="nb">sleep</span> <span class="mi">1</span>
-    <span class="nb">puts</span> <span class="s2">&quot;line </span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="no">STDOUT</span><span class="o">.</span><span class="n">flush</span>
-<span class="k">end</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When you do store output of a background thread, these are the stdout/err <em>pipes</em>,
-rather than the text of the output.</p>
-
+<h3 id="Anaconda-or-Miniconda?">Anaconda or Miniconda?<a class="anchor-link" href="#Anaconda-or-Miniconda?">&#182;</a></h3>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ruby_lines</span>
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>[From anaconda.org:]</p>
+<p>Choose Anaconda if you:</p>
+<ul>
+<li>Are new to conda or Python.</li>
+<li>Like the convenience of having Python and over 150 scientific packages automatically installed at once.</li>
+<li>Have the time and disk space—a few minutes and 300 MB.</li>
+<li>Do not want to individually install each of the packages you want to use.</li>
+</ul>
+<p>Choose Miniconda if you:</p>
+<ul>
+<li>Do not mind installing each of the packages you want to use individually.</li>
+<li>Do not have time or disk space to install over 150 packages at once.</li>
+<li>Want fast access to Python and the conda commands and you wish to sort out the other programs later.</li>
+</ul>
 
 </div>
 </div>
 </div>
-
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ruby_lines</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="'conda'">'conda'<a class="anchor-link" href="#'conda'">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>conda</code> manages everything</p>
+<ul>
+<li>Originally developed as an extended Python package manager</li>
+<li>Developed by Continuum Analytics as an open source project</li>
+<li>Conda manages not only python packages, but also their dependent libraries (e.g., libxml, mkl, and jdk)</li>
+<li>Packages are shipped in compiled binaries, saving deployment time</li>
+<li>An extended "virtual environment"</li>
+</ul>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Conda-usage">Conda usage<a class="anchor-link" href="#Conda-usage">&#182;</a></h3>
+<pre><code>conda install numpy matplotlib  # install new packages
+conda list                      # list installed packages
+conda update                    # check if newer version exists
+conda remove numpy scipy        # remove packages
+conda clean --all               # clean caches and unused packages</code></pre>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Conda-environment">Conda environment<a class="anchor-link" href="#Conda-environment">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Create isolated environments using different python version and installed packages, managed via conda env</p>
+
+<pre><code>$ conda create -n VENV_NAME python=3.5  # create a new env
+$ source activate VENV_NAME             # activate env
+(VENV_NAME) $                           # inside the isolated env
+(VENV_NAME) $ conda install ...
+(VENV_NAME) $ deactivate
+$</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Conda-channels">Conda channels<a class="anchor-link" href="#Conda-channels">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Channel contains a set of packages that are not shipped by default</li>
+<li>Only some popular packages are officially maintained</li>
+<li>R settings should not mess with the default Python channel</li>
+</ul>
+<p>Popular channels:</p>
+<ul>
+<li>conda-forge: community driven channels</li>
+<li>r: for R</li>
+<li>bioconda: for biology-related tools</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="bioconda"><code>bioconda</code><a class="anchor-link" href="#bioconda">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <a href="https://bioconda.github.io">bioconda</a> channel enable the <code>conda</code> package manager to instantly install bioinformations softwares.</p>
+<p><a href="https://www.nature.com/articles/s41592-018-0046-7">Grüning B, Dale R, Sjödin A, Chapman BA, Rowe J, Tomkins-Tinch CH, et al. <em>Bioconda: sustainable and comprehensive software distribution for the life sciences.</em> Nature Methods. 2018;15(7):475–6.</a></p>
+<p>Nature "<a href="http://blogs.nature.com/naturejobs/2017/11/03/techblog-bioconda-promises-to-ease-bioinformatics-software-installation-woes/"><em>TechBlog: Bioconda promises to ease bioinformatics software installation woes</em></a>"</p>
+<p>Browse packages in the Bioconda channel: <a href="https://bioconda.github.io/recipes.html#recipes">Available packages</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tour-of-Anaconda-Distribution"><a href="https://www.anaconda.com/download/">Tour of Anaconda Distribution</a><a class="anchor-link" href="#Tour-of-Anaconda-Distribution">&#182;</a></h2><ul>
+<li>Download</li>
+<li>Install</li>
+<li>Packages</li>
+<li>Updates</li>
+<li>Environments</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Other-Distribution">Other Distribution<a class="anchor-link" href="#Other-Distribution">&#182;</a></h3><ul>
+<li><a href="https://www.enthought.com/product/enthought-python-distribution/">Enthough Python Distribution</a> ("EPD")</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Vocabulary:">Vocabulary:<a class="anchor-link" href="#Vocabulary:">&#182;</a></h4><ul>
+<li>distribution<ul>
+<li>A collection of the python programming language and a number of python packages together in a single installer</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>python programming language<ul>
+<li>the vocabulary and syntax that we will use to write our software, developed by Guido van Rossum in 1991 and further developed by many people since</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>package<ul>
+<li>software written in python and available for our use</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
 </div>
     </div>
   </div>

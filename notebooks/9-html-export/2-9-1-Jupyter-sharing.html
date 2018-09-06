@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>3-1-install-bioconda</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>2-9-1-Jupyter-sharing</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11775,7 +11775,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Building-a-Bioinformatics-Workflow-with-Jupyter-&amp;-Anaconda">Building a Bioinformatics Workflow with Jupyter &amp; Anaconda<a class="anchor-link" href="#Building-a-Bioinformatics-Workflow-with-Jupyter-&amp;-Anaconda">&#182;</a></h1>
+<h1 id="Sharing-Jupyter-Notebook">Sharing Jupyter Notebook<a class="anchor-link" href="#Sharing-Jupyter-Notebook">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11783,16 +11783,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Installing-Bioinformatics-Software-with-bioconda">Installing Bioinformatics Software with <code>bioconda</code><a class="anchor-link" href="#Installing-Bioinformatics-Software-with-bioconda">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Burke Squires</p>
-<p><a href="https://github.com/burkesquires">https://github.com/burkesquires</a></p>
+<p>(Walkthrough / Hands on; 1 hr.)</p>
 
 </div>
 </div>
@@ -11801,8 +11792,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-
+<h3 id="Static">Static<a class="anchor-link" href="#Static">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -11810,36 +11800,25 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="attachment:bioconda.png" alt="bioconda.png"></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Setting-up-bioconda">Setting up <code>bioconda</code><a class="anchor-link" href="#Setting-up-bioconda">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://bioconda.github.io/">Bioconda</a> is "a channel for the conda package manager specializing in bioinformatics software. Bioconda consists of:</p>
 <ul>
-<li>a repository of recipes hosted on GitHub</li>
-<li>a build system that turns these recipes into conda packages</li>
-<li>a repository of more than 3000 bioinformatics packages ready to use with conda install</li>
-<li>Over 250 contributors that add, modify, update and maintain the recipes</li>
+<li>Exporting notebook file<ul>
+<li>Notebook is a single file</li>
 </ul>
-<p>(<strong>Note</strong>:The NIH's own <a href="https://github.com/daler">Ryan Dale</a> is a founding member of the <code>bioconda</code> project)</p>
-<p>The conda package manager makes installing software a vastly more streamlined process. Conda is a combination of other package managers you may have encountered, such as pip, CPAN, CRAN, Bioconductor, apt-get, and homebrew. Conda is both language- and OS-agnostic, and can be used to install C/C++, Fortran, Go, R, Python, Java etc programs on Linux, Mac OSX, and Windows.</p>
-<p>Conda allows separation of packages into repositories, or channels. The main defaults channel has a large number of common packages. Users can add additional channels from which to install software packages not available in the defaults channel. Bioconda is one such channel specializing in bioinformatics software.</p>
-<p>Bioconda has been acknowledged by NATURE in their <a href="http://blogs.nature.com/naturejobs/2017/11/03/techblog-bioconda-promises-to-ease-bioinformatics-software-installation-woes/">technology blog</a>.</p>
-<p>Each package added to Bioconda also has a corresponding Docker BioContainer automatically created and uploaded to Quay.io."</p>
-<p>See the ailable packages <a href="https://bioconda.github.io/recipes.html">here</a></p>
+</li>
+<li>PDF</li>
+<li>HTML</li>
+<li>As a script<ul>
+<li>How to run that script from the command line</li>
+<li>How to run exported script within another notebook</li>
+<li>(Need to test with R)</li>
+</ul>
+</li>
+<li>Sharing Jupyter notebooks (as notebooks, posting online as a static but downloadable notebook)<ul>
+<li>nbviewer - convert URL or GitHub notebook</li>
+<li>GitHub support for Jupyter Notebooks </li>
+</ul>
+</li>
+</ul>
 
 </div>
 </div>
@@ -11848,7 +11827,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.-Install-conda">1. Install conda<a class="anchor-link" href="#1.-Install-conda">&#182;</a></h3>
+<h3 id="Dynamic">Dynamic<a class="anchor-link" href="#Dynamic">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -11856,369 +11835,16 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Bioconda requires the conda package manager to be installed. If you have an Anaconda Python installation, you already have it. Otherwise, the best way to install it is with the Miniconda package. The Python 3 version is recommended.</p>
-<p><strong>Note</strong>: If you have installed the Anaconda distribution you have already taken care of this step!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.-Set-up-channels">2. Set up channels<a class="anchor-link" href="#2.-Set-up-channels">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>After installing conda you will need to add the bioconda channel as well as the other channels bioconda depends on. It is important to add them in this order so that the priority is set correctly (that is, bioconda is highest priority).</p>
-<p>The conda-forge channel contains many general-purpose packages not already found in the defaults channel. The r channel is only included due to backward compatibility. It is not mandatory, but without the r channel packages compiled against R 3.3.1 might not work.</p>
-
-<pre><code>(conda config --add channels r)
-conda config --add channels defaults
-conda config --add channels conda-forge
-conda config --add channels bioconda</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>conda config --add channels defaults
-<span class="o">!</span>conda config --add channels conda-forge
-<span class="o">!</span>conda config --add channels bioconda
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Warning: &#39;defaults&#39; already in &#39;channels&#39; list, moving to the top
-Warning: &#39;conda-forge&#39; already in &#39;channels&#39; list, moving to the top
-Warning: &#39;bioconda&#39; already in &#39;channels&#39; list, moving to the top
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3.-Install-packages">3. Install packages<a class="anchor-link" href="#3.-Install-packages">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Browse the packages to see what’s available.</p>
-<p>Bioconda is now enabled, so any packages on the bioconda channel can be installed into the current conda environment:</p>
-
-<pre><code>conda install bwa
-
-</code></pre>
-<p>Or a new environment can be created:</p>
-
-<pre><code>conda create -n aligners bwa bowtie hisat star</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We will install three softwares: <code>bwa</code>, <code>samtools</code>, and <code>bcftools</code>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>conda install -y bwa
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Solving environment: done
-
-## Package Plan ##
-
-  environment location: /Users/squiresrb/anaconda3/envs/mro_env
-
-  added / updated specs: 
-    - bwa
-
-
-The following packages will be downloaded:
-
-    package                    |            build
-    ---------------------------|-----------------
-    certifi-2018.4.16          |           py37_0         141 KB  conda-forge
-    bwa-0.7.17                 |       ha92aebf_3         184 KB  bioconda
-    perl-5.26.2                |       h16c6ff1_0        14.9 MB  conda-forge
-    ------------------------------------------------------------
-                                           Total:        15.2 MB
-
-The following NEW packages will be INSTALLED:
-
-    bwa:             0.7.17-ha92aebf_3 bioconda   
-    perl:            5.26.2-h16c6ff1_0 conda-forge
-
-The following packages will be UPDATED:
-
-    ca-certificates: 2018.03.07-0                  --&gt; 2018.4.16-0       conda-forge
-    certifi:         2018.4.16-py37_0              --&gt; 2018.4.16-py37_0  conda-forge
-    openssl:         1.0.2o-h1de35cc_1             --&gt; 1.0.2o-h470a237_1 conda-forge
-
-
-Downloading and Extracting Packages
-certifi-2018.4.16    |  141 KB | ####################################### | 100% 
-bwa-0.7.17           |  184 KB | ####################################### | 100% 
-perl-5.26.2          | 14.9 MB | ####################################### | 100% 
-Preparing transaction: done
-Verifying transaction: done
-Executing transaction: done
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>conda install -y samtools
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Solving environment: done
-
-## Package Plan ##
-
-  environment location: /Users/squiresrb/anaconda3/envs/mro_env
-
-  added / updated specs: 
-    - samtools
-
-
-The following packages will be downloaded:
-
-    package                    |            build
-    ---------------------------|-----------------
-    samtools-1.7               |                1         513 KB  bioconda
-
-The following NEW packages will be INSTALLED:
-
-    samtools: 1.7-1 bioconda
-
-
-Downloading and Extracting Packages
-samtools-1.7         |  513 KB | ####################################### | 100% 
-Preparing transaction: done
-Verifying transaction: done
-Executing transaction: done
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>conda install -y bcftools
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Solving environment: done
-
-## Package Plan ##
-
-  environment location: /Users/squiresrb/anaconda3/envs/mro_env
-
-  added / updated specs: 
-    - bcftools
-
-
-The following packages will be downloaded:
-
-    package                    |            build
-    ---------------------------|-----------------
-    bcftools-1.9               |       h4da6232_0         789 KB  bioconda
-    libdeflate-1.0             |       h470a237_0          44 KB  bioconda
-    ------------------------------------------------------------
-                                           Total:         833 KB
-
-The following NEW packages will be INSTALLED:
-
-    bcftools:   1.9-h4da6232_0 bioconda
-    libdeflate: 1.0-h470a237_0 bioconda
-
-
-Downloading and Extracting Packages
-bcftools-1.9         |  789 KB | ####################################### | 100% 
-libdeflate-1.0       |   44 KB | ####################################### | 100% 
-Preparing transaction: done
-Verifying transaction: done
-Executing transaction: done
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Note</strong>: Remember to restart the kernel in a notebook if you have made changes using conda.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="biopython"><code>biopython</code><a class="anchor-link" href="#biopython">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>While we are not going to be using it today, another excellent python bioinformatics resource is the <a href="http://biopython.org/DIST/docs/tutorial/Tutorial.html">biopython</a> project!</p>
-<p>"The Biopython Project is an international association of developers of freely available Python (<a href="http://www.python.org">http://www.python.org</a>) tools for computational molecular biology."</p>
-<p><img src="attachment:biopython_logo.svg" alt="biopython_logo.svg"></p>
-<p>"What can I find in the Biopython package</p>
-<p>The main Biopython releases have lots of functionality, including:</p>
 <ul>
-<li>The ability to parse bioinformatics files into Python utilizable data structures, including support for the following formats:<ul>
-<li>Blast output – both from standalone and WWW Blast</li>
-<li>Clustalw</li>
-<li>FASTA</li>
-<li>GenBank</li>
-<li>PubMed and Medline</li>
-<li>ExPASy files, like Enzyme and Prosite</li>
-<li>SCOP, including ‘dom’ and ‘lin’ files</li>
-<li>UniGene</li>
-<li>SwissProt</li>
+<li>My Binder<ul>
+<li>Creating a GitHub account<ul>
+<li>Skip version control?</li>
 </ul>
 </li>
-<li>Files in the supported formats can be iterated over record by record or indexed and accessed via a Dictionary interface.</li>
-<li>Code to deal with popular on-line bioinformatics destinations such as:<ul>
-<li>NCBI – Blast, Entrez and PubMed services</li>
-<li>ExPASy – Swiss-Prot and Prosite entries, as well as Prosite searches</li>
+<li>Perhaps demo this if we do not have enough time</li>
 </ul>
 </li>
-<li>Interfaces to common bioinformatics programs such as:<ul>
-<li>Standalone Blast from NCBI</li>
-<li>Clustalw alignment program</li>
-<li>EMBOSS command line tools</li>
 </ul>
-</li>
-<li>A standard sequence class that deals with sequences, ids on sequences, and sequence features.</li>
-<li>Tools for performing common operations on sequences, such as translation, transcription and weight calculations.</li>
-<li>Code to perform classification of data using k Nearest Neighbors, Naive Bayes or Support Vector Machines.</li>
-<li>Code for dealing with alignments, including a standard way to create and deal with substitution matrices.</li>
-<li>Code making it easy to split up parallelizable tasks into separate processes.</li>
-<li>GUI-based programs to do basic sequence manipulations, translations, BLASTing, etc.</li>
-<li>Extensive documentation and help with using the modules, including this file, on-line wiki documentation, the web site, and the mailing list.</li>
-<li>Integration with BioSQL, a sequence database schema also supported by the BioPerl and BioJava projects."</li>
-</ul>
-<p>With <code>conda</code> installing biopython is as easy as <code>conda install biopython</code></p>
 
 </div>
 </div>

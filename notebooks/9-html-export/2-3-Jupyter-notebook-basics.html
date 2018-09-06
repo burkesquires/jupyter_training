@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>3-2-variant-calling-workflow</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>2-3-Jupyter-notebook-basics</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11775,7 +11775,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Building-a-Bioinformatics-Workflow-with-Jupyter-&amp;-Anaconda">Building a Bioinformatics Workflow with Jupyter &amp; Anaconda<a class="anchor-link" href="#Building-a-Bioinformatics-Workflow-with-Jupyter-&amp;-Anaconda">&#182;</a></h1>
+<h1 id="Notebook-Basics">Notebook Basics<a class="anchor-link" href="#Notebook-Basics">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11783,15 +11783,8 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Variant-Calling-Workflow">Variant Calling Workflow<a class="anchor-link" href="#Variant-Calling-Workflow">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Burke Squires</p>
+<p>(Walkthrough; 15 min)</p>
+<p>R. Burke Squires</p>
 <p><a href="https://github.com/burkesquires">https://github.com/burkesquires</a></p>
 
 </div>
@@ -11801,8 +11794,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-
+<h1 id="Jupyterlab">Jupyterlab<a class="anchor-link" href="#Jupyterlab">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11810,29 +11802,13 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Scenario:">Scenario:<a class="anchor-link" href="#Scenario:">&#182;</a></h4><p>Have yeast NGS data and we want to detect variants from the data</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="http://www.htslib.org/workflow/">Source: http://www.htslib.org/workflow/</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Software that is need for pipeline:</p>
+<h2 id="The-interface...">The interface...<a class="anchor-link" href="#The-interface...">&#182;</a></h2><p><a href="https://jupyterlab.readthedocs.io/en/stable/user/interface.html">https://jupyterlab.readthedocs.io/en/stable/user/interface.html</a></p>
 <ul>
-<li><code>bwa</code></li>
-<li><code>samtools</code></li>
-<li><code>bcftools</code></li>
+<li>Menubar</li>
+<li>Left Sidebar</li>
+<li>Main Work Area</li>
+<li>Tabs and SingleDocument Mode</li>
+<li>Keyboard Shortcuts</li>
 </ul>
 
 </div>
@@ -11842,13 +11818,12 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Samtools is a suite of programs for interacting with high-throughput sequencing data. It consists of three separate repositories:</p>
+<h2 id="Working-with-Files">Working with Files<a class="anchor-link" href="#Working-with-Files">&#182;</a></h2><p><a href="https://jupyterlab.readthedocs.io/en/stable/user/files.html#">https://jupyterlab.readthedocs.io/en/stable/user/files.html#</a></p>
 <ul>
-<li>Samtools: Reading/writing/editing/indexing/viewing SAM/BAM/CRAM format</li>
-<li>BCFtools: Reading/writing BCF2/VCF/gVCF files and calling/filtering/summarising SNP and short indel sequence variants</li>
-<li>HTSlib: A C library for reading/writing high-throughput sequencing data</li>
+<li>Opening Files</li>
+<li>Creating Files and Activities</li>
+<li>Uploading and Downloading</li>
 </ul>
-<p>Samtools and BCFtools both use HTSlib internally, but these source packages contain their own copies of htslib so they can be built independently.</p>
 
 </div>
 </div>
@@ -11857,60 +11832,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Download-some-data:">Download some data:<a class="anchor-link" href="#Download-some-data:">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>curl ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR507/SRR507778/SRR507778_1.fastq.gz <span class="p">|</span> gzip -d <span class="p">|</span> head -100000 &gt; y1.fastq
-<span class="o">!</span>curl ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR507/SRR507778/SRR507778_2.fastq.gz <span class="p">|</span> gzip -d <span class="p">|</span> head -100000 &gt; y2.fastq
-<span class="o">!</span>curl ftp://ftp.ensembl.org/pub/current_fasta/saccharomyces_cerevisiae/dna/Saccharomyces_cerevisiae.R64-1-1.dna_sm.toplevel.fa.gz <span class="p">|</span> gzip -d &gt; yeast.fasta
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0  537M    0  1448    0     0    614      0  10d 15h  0:00:02  10d 15h   614gzip: error writing to output: Broken pipe
-  0  537M    0  855k    0     0   284k      0  0:32:13  0:00:03  0:32:10  284k
-curl: (23) Failed writing body (0 != 11584)
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0  559M    0  328k    0     0   155k      0  1:01:11  0:00:02  1:01:09  155kgzip: error writing to output: Broken pipe
-  0  559M    0  902k    0     0   391k      0  0:24:22  0:00:02  0:24:20  391k
-curl: (23) Failed writing body (0 != 7240)
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100 3782k  100 3782k    0     0  1361k      0  0:00:02  0:00:02 --:--:-- 1361k
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
+<h2 id="Text-Editor">Text Editor<a class="anchor-link" href="#Text-Editor">&#182;</a></h2><p><a href="https://jupyterlab.readthedocs.io/en/stable/user/file_editor.html#">https://jupyterlab.readthedocs.io/en/stable/user/file_editor.html#</a></p>
 
 </div>
 </div>
@@ -11919,7 +11841,7 @@ curl: (23) Failed writing body (0 != 7240)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Prepare-the-BWA-indices">Prepare the BWA indices<a class="anchor-link" href="#Prepare-the-BWA-indices">&#182;</a></h2>
+<h3 id="Modal-editor">Modal editor<a class="anchor-link" href="#Modal-editor">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -11927,111 +11849,7 @@ curl: (23) Failed writing body (0 != 7240)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We need to ensure there exists a .fai fasta index and also indices for whichever aligner we are using (Bwa-mem in this example).</p>
-
-<pre><code>samtools faidx yeast.fasta
-bwa index yeast.fasta</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>samtools faidx yeast.fasta
-<span class="o">!</span>bwa index yeast.fasta
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[bwa_index] Pack FASTA... 0.09 sec
-[bwa_index] Construct BWT for the packed sequence...
-[bwa_index] 6.00 seconds elapse.
-[bwa_index] Update BWT... 0.06 sec
-[bwa_index] Pack forward-only FASTA... 0.05 sec
-[bwa_index] Construct SA from BWT and Occ... 1.70 sec
-[main] Version: 0.7.17-r1188
-[main] CMD: bwa index yeast.fasta
-[main] Real time: 8.029 sec; CPU: 7.927 sec
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-red-fg">2 - Bioinformatics software installation using bioconda.ipynb</span>
-<span class="ansi-red-fg">3 - Variant Calling Pipeline.ipynb</span>
-Build-a-Reproducible-Jupyter-Workflow-From-Scratch-master.zip
-Hands On.pptx
-y1.fastq
-y2.fastq
-yeast.fasta
-yeast.fasta.amb
-yeast.fasta.ann
-yeast.fasta.bwt
-yeast.fasta.fai
-yeast.fasta.pac
-yeast.fasta.sa
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Produce-the-Alignments">Produce the Alignments<a class="anchor-link" href="#Produce-the-Alignments">&#182;</a></h2>
+<h4 id="Edit-mode">Edit mode<a class="anchor-link" href="#Edit-mode">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -12039,80 +11857,9 @@ yeast.fasta.sa
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The aligner is likely to output SAM in the same order or similar order to the input fastq files. It won’t be outputting in chromosome position order, so the output is typically not well suited to CRAM.</p>
-
-<pre><code>bwa mem -R '@RG\tID:foo\tSM:bar\tLB:library1' yeast.fasta y1.fastq y2.fastq &gt; yeast.sam
-
-</code></pre>
-<p>The -R option adds a read-group line and applies that read-group to all aligned sequence records. It is not necessary, but a recommended practice.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>bwa mem -R <span class="s1">&#39;@RG\tID:foo\tSM:bar\tLB:library1&#39;</span> yeast.fasta y1.fastq y2.fastq &gt; yeast.sam
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[M::bwa_idx_load_from_disk] read 0 ALT contigs
-[M::process] read 50000 sequences (1800000 bp)...
-[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (103, 4007, 13219, 91)
-[M::mem_pestat] analyzing insert size distribution for orientation FF...
-[M::mem_pestat] (25, 50, 75) percentile: (240, 2467, 3114)
-[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 8862)
-[M::mem_pestat] mean and std.dev: (1893.02, 1414.42)
-[M::mem_pestat] low and high boundaries for proper pairs: (1, 11736)
-[M::mem_pestat] analyzing insert size distribution for orientation FR...
-[M::mem_pestat] (25, 50, 75) percentile: (243, 275, 314)
-[M::mem_pestat] low and high boundaries for computing mean and std.dev: (101, 456)
-[M::mem_pestat] mean and std.dev: (278.34, 50.30)
-[M::mem_pestat] low and high boundaries for proper pairs: (30, 527)
-[M::mem_pestat] analyzing insert size distribution for orientation RF...
-[M::mem_pestat] (25, 50, 75) percentile: (3111, 3320, 3565)
-[M::mem_pestat] low and high boundaries for computing mean and std.dev: (2203, 4473)
-[M::mem_pestat] mean and std.dev: (3352.46, 321.09)
-[M::mem_pestat] low and high boundaries for proper pairs: (1749, 4927)
-[M::mem_pestat] analyzing insert size distribution for orientation RR...
-[M::mem_pestat] (25, 50, 75) percentile: (291, 2611, 3188)
-[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 8982)
-[M::mem_pestat] mean and std.dev: (2036.04, 1501.65)
-[M::mem_pestat] low and high boundaries for proper pairs: (1, 11879)
-[M::mem_pestat] skip orientation FF
-[M::mem_pestat] skip orientation RR
-[M::mem_process_seqs] Processed 50000 reads in 5.590 CPU sec, 5.599 real sec
-[main] Version: 0.7.17-r1188
-[main] CMD: bwa mem -R @RG\tID:foo\tSM:bar\tLB:library1 yeast.fasta y1.fastq y2.fastq
-[main] Real time: 5.731 sec; CPU: 5.681 sec
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
+<p>Edit mode is indicated by a green cell border and a prompt showing in the editor area:</p>
+<p><img src="../images/edit_mode.png" alt="Jupyter cell with green border"></p>
+<p>When a cell is in edit mode, you can type into the cell, like a normal text editor.</p>
 
 </div>
 </div>
@@ -12121,7 +11868,17 @@ yeast.fasta.sa
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Sort-into-chromosome/positon-order">Sort into chromosome/positon order<a class="anchor-link" href="#Sort-into-chromosome/positon-order">&#182;</a></h2>
+<div class="alert alert-success">
+Enter edit mode by pressing `Enter` or using the mouse to click on a cell's editor area.
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Command-mode">Command mode<a class="anchor-link" href="#Command-mode">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -12129,34 +11886,9 @@ yeast.fasta.sa
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Ideally at this point we would be outputting CRAM directly, but at present samtools 1.0 does not have a way to indicate the reference on the command line. We can output to BAM instead and convert (below), or modify the SAM @SQ header to include MD5 sums in the M5: field.</p>
-
-<pre><code>samtools sort -O bam -T /tmp -l 0 -o yeast.bam yeast.sam
-
-</code></pre>
-<p>The “-l 0” indicates to use no compression in the BAM file, as it is transitory and will be replaced by CRAM soon. We may wish to use -l 1 if disk space is short and we wish to reduce temporary file size.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>samtools sort -O bam -T /tmp -l <span class="m">0</span> -o yeast.bam yeast.sam
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
+<p>Command mode is indicated by a grey cell border with a blue left margin:</p>
+<p><img src="../images/command_mode.png" alt="Jupyter cell with blue &amp; grey border"></p>
+<p>When you are in command mode, you are able to edit the notebook as a whole, but not type into individual cells. Most importantly, in command mode, the keyboard is mapped to a set of shortcuts that let you perform notebook and cell actions efficiently. For example, if you are in command mode and you press <code>c</code>, you will copy the current cell - no modifier is needed.</p>
 
 </div>
 </div>
@@ -12165,47 +11897,17 @@ yeast.fasta.sa
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Convert-to-CRAM-format">Convert to CRAM format<a class="anchor-link" href="#Convert-to-CRAM-format">&#182;</a></h2>
+<div class="alert alert-success">
+Enter command mode by pressing `Esc` or using the mouse to click *outside* a cell's editor area.
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-<pre><code>samtools view -T yeast.fasta -C -o yeast.cram yeast.bam
-
-</code></pre>
-<p>Note that since the BAM file did not have M5 tags for the reference sequences, they are computed by Samtools and added to the CRAM. In a production environment, this step can be avoided by ensuring that the M5 tags are already in the SAM/BAM header.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>samtools view -T yeast.fasta -C -o yeast.cram yeast.bam
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Using CRAM within Samtools</strong></p>
-<p>CRAM is primarily a reference-based compressed format, meaning that only differences between the stored sequences and the reference are stored.</p>
-<p>For a workflow this has a few fundamental effects:</p>
-<p>Alignments should be kept in chromosome/position sort order.
-The reference must be available at all times. Losing it may be equivalent to losing all your read sequences.
-Technically CRAM can work with other orders but it can become inefficient due to a large amount of random access across the reference genome. The current implementation of CRAM in htslib 1.0 is also inefficient in size for unsorted data, although this will be rectified in upcoming releases.</p>
-<p>In CRAM format the reference sequence is linked to by the md5sum (M5 auxiliary tag) in the CRAM header (@SQ tags). This is mandatory and part of the CRAM specification. In SAM/BAM format, these M5 tags are optional. Therefore converting from SAM/BAM to CRAM requires some additional overhead to link the CRAM to the correct reference sequence.</p>
+<h2 id="Notebooks">Notebooks<a class="anchor-link" href="#Notebooks">&#182;</a></h2><p><a href="https://jupyterlab.readthedocs.io/en/stable/user/notebook.html#">https://jupyterlab.readthedocs.io/en/stable/user/notebook.html#</a></p>
 
 </div>
 </div>
@@ -12214,81 +11916,7 @@ Technically CRAM can work with other orders but it can become inefficient due to
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The last 3 steps can be combined into a pipeline to reduce disk I/O:</p>
-
-<pre><code>bwa mem yeast.fasta y1.fastq y2.fastq | \
-samtools sort -O bam -l 0 -T /tmp - | \
-samtools view -T yeast.fasta -C -o yeast.cram -</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>bwa mem yeast.fasta y1.fastq y2.fastq <span class="p">|</span> <span class="err">\</span>
-<span class="n">samtools</span> <span class="n">sort</span> <span class="o">-</span><span class="n">O</span> <span class="n">bam</span> <span class="o">-</span><span class="n">l</span> <span class="mi">0</span> <span class="o">-</span><span class="n">T</span> <span class="o">/</span><span class="n">tmp</span> <span class="o">-</span> <span class="o">|</span> \
-<span class="n">samtools</span> <span class="n">view</span> <span class="o">-</span><span class="n">T</span> <span class="n">yeast</span><span class="o">.</span><span class="n">fasta</span> <span class="o">-</span><span class="n">C</span> <span class="o">-</span><span class="n">o</span> <span class="n">yeast</span><span class="o">.</span><span class="n">cram</span> <span class="o">-</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[M::bwa_idx_load_from_disk] read 0 ALT contigs
-[M::process] read 50000 sequences (1800000 bp)...
-[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (103, 4007, 13219, 91)
-[M::mem_pestat] analyzing insert size distribution for orientation FF...
-[M::mem_pestat] (25, 50, 75) percentile: (240, 2467, 3114)
-[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 8862)
-[M::mem_pestat] mean and std.dev: (1893.02, 1414.42)
-[M::mem_pestat] low and high boundaries for proper pairs: (1, 11736)
-[M::mem_pestat] analyzing insert size distribution for orientation FR...
-[M::mem_pestat] (25, 50, 75) percentile: (243, 275, 314)
-[M::mem_pestat] low and high boundaries for computing mean and std.dev: (101, 456)
-[M::mem_pestat] mean and std.dev: (278.34, 50.30)
-[M::mem_pestat] low and high boundaries for proper pairs: (30, 527)
-[M::mem_pestat] analyzing insert size distribution for orientation RF...
-[M::mem_pestat] (25, 50, 75) percentile: (3111, 3320, 3565)
-[M::mem_pestat] low and high boundaries for computing mean and std.dev: (2203, 4473)
-[M::mem_pestat] mean and std.dev: (3352.46, 321.09)
-[M::mem_pestat] low and high boundaries for proper pairs: (1749, 4927)
-[M::mem_pestat] analyzing insert size distribution for orientation RR...
-[M::mem_pestat] (25, 50, 75) percentile: (291, 2611, 3188)
-[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 8982)
-[M::mem_pestat] mean and std.dev: (2036.04, 1501.65)
-[M::mem_pestat] low and high boundaries for proper pairs: (1, 11879)
-[M::mem_pestat] skip orientation FF
-[M::mem_pestat] skip orientation RR
-[M::mem_process_seqs] Processed 50000 reads in 4.906 CPU sec, 4.915 real sec
-[main] Version: 0.7.17-r1188
-[main] CMD: bwa mem yeast.fasta y1.fastq y2.fastq
-[main] Real time: 5.029 sec; CPU: 4.981 sec
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
+<h2 id="Code-Console">Code Console<a class="anchor-link" href="#Code-Console">&#182;</a></h2><p><a href="https://jupyterlab.readthedocs.io/en/stable/user/code_console.html#">https://jupyterlab.readthedocs.io/en/stable/user/code_console.html#</a></p>
 
 </div>
 </div>
@@ -12297,251 +11925,7 @@ samtools view -T yeast.fasta -C -o yeast.cram -</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Viewing-in-alignment-and-pileup-format">Viewing in alignment and pileup format<a class="anchor-link" href="#Viewing-in-alignment-and-pileup-format">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>See the variant calling workflow for more advanced examples.</p>
-
-<pre><code>samtools view yeast.cram
-samtools mpileup -f yeast.fasta yeast.cram</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>samtools view yeast.cram &gt; yeast.sam
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[W::cram_populate_ref] Creating reference cache directory /Users/squiresrb/.cache/hts-ref
-This may become large; see the samtools(1) manual page REF_CACHE discussion
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>samtools mpileup -f yeast.fasta yeast.cram &gt; yeast_variants.pileup
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[mpileup] 1 samples in 1 input files
-&lt;mpileup&gt; Set max per-file depth to 8000
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="View-(some--of)-our-results">View (some  of) our results<a class="anchor-link" href="#View-(some--of)-our-results">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-<pre><code>head -n 25 yeast.sam
-head -n 25 yeast_variants.pileup</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>head -n <span class="m">25</span> yeast.sam
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>SRR507778.19213	147	I	62	60	36M	=	3183	3087	ATCCTAACACTACCCTAACACAGCCCTAATCTAACC	15=@9:@C3&lt;CBGGGDGDBGDFCC?&gt;GGG&lt;GGGDGG	MC:Z:36M	AS:i:36	XS:i:19	MD:Z:36	NM:i:0
-SRR507778.12312	147	I	205	60	36M	=	3626	3387	CCACTCACCCACCGTTACCCTCCAATTACCCATATC	GD&lt;B?B&gt;DGGBGGGGGCIIIIGIIIIIEIIGIIIII	MC:Z:36M	AS:i:36	XS:i:26	MD:Z:36	NM:i:0
-SRR507778.11604	83	I	402	60	36M	=	3869	3433	CTCACTTGTATACTGATTTTACGTACGCACACGGAT	GHGHIIIIIIIIIIIHIIIIIIIIIIIIIIIIIIII	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.10609	83	I	2661	40	36M	=	6131	3436	TGAATTCGTACAACATTAAACGTGTGTTGGGAGTCG	IIIGFIIGIIHIIIIGIIIIIIIIIIHIIIIIIGII	MC:Z:36M	AS:i:36	XS:i:36	MD:Z:36	NM:i:0
-SRR507778.6249	147	I	2925	60	36M	=	6404	3445	TTTCTAAGTGGGATTTTTCTTAATCCTTGGATTCTT	GGGGADIGIHIIHHHIEHIHIHI&lt;DIIIIIIIGIIF	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.14609	129	I	3048	60	36M	IV	1525643	0	AAAAGTAGCCGTTCATTTCCCTTCCGATTTCATTCC	&gt;5833+?=8&gt;B@FBF?9B7AGGGB&lt;G@BGGGGEGD&gt;	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.20233	83	I	3132	60	36M	=	6388	3222	TATTTGTGTCCCATTCTCGTAGATAAAATTCTTGGA	IIIIIIIGGIIIIIIIIIIIIIIIIIIIIIIBIIII	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.19213	99	I	3183	60	36M	=	62	-3087	ATTTTCTTCATAAAGAAGCTTTCAAGATATAAGATA	HHHGHGDAHHHHHEHHHHHHHHGHEGBDGGGGG&lt;GE	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.20882	73	I	3259	60	36M	=	3259	0	CAAAAAGGAAAGCATGGAGGGAAACAGTAAACAGTG	@GGGGGG&gt;GGBD4DDGGEDGDDG@GAA1CBEEEE3D	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.20882	133	I	3259	0	*	=	3259	0	GTGGTGTGTGTGGGTGAGGTGTGGGTGTGGGGAGGG	EGBG8GCB8BBBB#######################	MC:Z:36M	AS:i:0	XS:i:0
-SRR507778.12312	99	I	3626	60	36M	=	205	-3387	GTATCTGATGTTTTTTTAGTAATTTCTTTGTAAATA	IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIHHI	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.11604	163	I	3869	60	36M	=	402	-3433	TTTTTGAAAATATTCTGAGGTAAAAGCCATTAAGGT	IIIIIIHIIIIIIIIIIIIIIIIIIIIHIIIIHIIE	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.24515	83	I	4004	60	36M	=	7814	3776	GATGTTTCAAGGCCTGAAGTTTGAATATTTATGTAG	IHIIIIIIIIIIIIHIIIIHIIIIIIIIIIIIIIII	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.19471	83	I	4627	60	36M	=	8153	3492	GGCAGAGTTTCCAAAAAAAATTGTTAATCGACAAAG	HGHBHGGHGHHHGHHHHHHHHGGGGGDDD=BDGGGG	MC:Z:36M	AS:i:36	XS:i:20	MD:Z:36	NM:i:0
-SRR507778.15626	83	I	4748	60	36M	=	8861	4079	TTTAAATTGTATTGAGTGCTTCAGTCATTGCAAAAT	IIIIIIIIIIIIIIIIIIIIIIHIIIIIIIIIIIII	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.7265	147	I	4894	60	36M	=	8228	3300	TATCTATCACAAAGGAGACAAAATCGTTGATAAAAA	GGBDGGIIIFIGHHIIDDGGGGGDGDIIDIIEIIII	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.14364	83	I	5516	60	36M	=	9133	3583	TATGATATAAAAACTCGGACCCTGTTTTACTTCTTT	IIIIIIIHIIIIIIIIIIIIIIIIIIIIIIIIIIII	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.10609	163	I	6131	60	36M	=	2661	-3436	CATACGTTGATTAGTACTGTTGGTCTCTCATTGAAA	HIHIHIGIIIHIIIHIHIIIGIIIGIEHDIIIHIHG	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.20233	163	I	6388	60	36M	=	3132	-3222	ACCAATTTGACGTTAATTTTAAATGCGTTCTGAAGT	IIIIIIIIIIIIIIIIIIIIIIIIIIIIIGIIIHII	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.6249	99	I	6404	60	36M	=	2925	-3445	TTTTAAATGCGTTCTGAAGTTTCTTAAATAACCCGG	GGGGGGGGGGHHHHHHGDHHHHGHHFGHHHGFGGGG	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.12461	83	I	6424	60	36M	=	9688	3230	TTCTTAAATAACCCGGATTGGTTAGGTTCAGCCATG	DB=D@DDD?DD=7=?@?4B=@DDD?D@DDDDDDDDD	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.17222	83	I	7507	60	36M	=	10727	3186	TAACTAAAGTAATAGCTCTAGTTTGAGCATCTCGGC	BBD@BDDDD@D:DDDBD:D?DD:DDDDB&lt;DDDDDD:	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.22588	99	I	7640	60	36M	=	7885	281	CCAAGCGGCTAATATGGAGTTACCAATGATATTGAA	IIIIIIIIIIIIIIGIIHFHIIIIIIIIFIGIIBHI	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.22331	83	I	7800	60	36M	=	11500	3666	GAGTATCTTTTCAAAGATTTCAACCATAGTAGGTAT	HIIIIHIIIIIIIIIIIIIIIIIIIIIIIIIIIIII	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-SRR507778.24515	163	I	7814	60	36M	=	4004	-3776	AGATTTCAACCATAGTAGGTATGCCCCAGATGAAAC	IIHIHHIHIIIIIIIHIHGFIIIIIIIGIIHIIIIH	MC:Z:36M	AS:i:36	XS:i:0	MD:Z:36	NM:i:0
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>head -n <span class="m">25</span> yeast_variants.pileup
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>I	62	a	1	^],	1
-I	63	T	1	,	5
-I	64	C	1	,	=
-I	65	C	1	,	@
-I	66	T	1	,	9
-I	67	A	1	,	:
-I	68	A	1	,	@
-I	69	C	1	,	C
-I	70	A	1	,	3
-I	71	C	1	,	&lt;
-I	72	T	1	,	C
-I	73	A	1	,	B
-I	74	C	1	,	G
-I	75	C	1	,	G
-I	76	C	1	,	G
-I	77	T	1	,	D
-I	78	A	1	,	G
-I	79	A	1	,	D
-I	80	C	1	,	B
-I	81	A	1	,	G
-I	82	C	1	,	D
-I	83	A	1	,	F
-I	84	G	1	,	C
-I	85	C	1	,	C
-I	86	C	1	,	?
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Glossary-of-file-formats">Glossary of file formats<a class="anchor-link" href="#Glossary-of-file-formats">&#182;</a></h4><p><a href="https://www.ncbi.nlm.nih.gov/sra/docs/submitformats/">https://www.ncbi.nlm.nih.gov/sra/docs/submitformats/</a></p>
-<p>Sequence data formats:</p>
-<ul>
-<li>FASTA: Simple format for DNA or peptide sequences.</li>
-<li>FASTQ: Stores sequences and sequence <strong>quality</strong> information together.</li>
-</ul>
-<p>Alignment data formats</p>
-<ul>
-<li>SAM / BAM Sequence Alignment/Map</li>
-</ul>
-<p>Variation data</p>
-<ul>
-<li>VCF / BCF Variant Call Format</li>
-</ul>
+<h2 id="Terminals">Terminals<a class="anchor-link" href="#Terminals">&#182;</a></h2><p><a href="https://jupyterlab.readthedocs.io/en/stable/user/terminal.html#">https://jupyterlab.readthedocs.io/en/stable/user/terminal.html#</a></p>
 
 </div>
 </div>

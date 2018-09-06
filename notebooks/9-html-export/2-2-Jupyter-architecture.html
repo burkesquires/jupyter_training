@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>2-3-Jupyter-notebook-basics</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>2-2-Jupyter-architecture</title><script src="https://unpkg.com/jupyter-js-widgets@2.0.*/dist/embed.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11775,7 +11775,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Notebook-Basics">Notebook Basics<a class="anchor-link" href="#Notebook-Basics">&#182;</a></h1>
+<h1 id="Jupyter-Notebook">Jupyter Notebook<a class="anchor-link" href="#Jupyter-Notebook">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11794,16 +11794,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-Notebook-dashboard">The Notebook dashboard<a class="anchor-link" href="#The-Notebook-dashboard">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>When you first start the notebook server, your browser will open to the notebook dashboard. The dashboard serves as a home page for the notebook. Its main purpose is to display the notebooks and files in the current directory. For example, here is a screenshot of the dashboard page for the <code>examples</code> directory in the Jupyter repository:</p>
-<p><img src="../images/dashboard_files_tab.png" alt="Jupyter dashboard showing files tab"></p>
+<hr>
 
 </div>
 </div>
@@ -11812,9 +11803,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The top of the notebook list displays clickable breadcrumbs of the current directory. By clicking on these breadcrumbs or on sub-directories in the notebook list, you can navigate your file system.</p>
-<p>To create a new notebook, click on the "New" button at the top of the list and select a kernel from the dropdown (as seen below).  Which kernels are listed depend on what's installed on the server.  Some of the kernels in the screenshot below may not exist as an option to you.</p>
-<p><img src="../images/dashboard_files_tab_new.png" alt="Jupyter &quot;New&quot; menu"></p>
+<h2 id="Getting-In-and-Getting-Out">Getting In and Getting Out<a class="anchor-link" href="#Getting-In-and-Getting-Out">&#182;</a></h2><p>Once you have the Anaconda python package installed, in your user folder there shold be an <code>anaconda3</code> directory.</p>
 
 </div>
 </div>
@@ -11823,10 +11812,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Notebooks and files can be uploaded to the current directory by dragging a notebook file onto the notebook list or by the "click here" text above the list.</p>
-<p>The notebook list shows green "Running" text and a green notebook icon next to running notebooks (as seen below). Notebooks remain running until you explicitly shut them down; closing the notebook's page is not sufficient.</p>
-<p><img src="../images/dashboard_files_tab_run.png" alt="Jupyter dashboard showing one notebook with a running kernel"></p>
-
+<h3 id="Openning-Jupyter-Notebooks">Openning Jupyter Notebooks<a class="anchor-link" href="#Openning-Jupyter-Notebooks">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -11834,9 +11820,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To shutdown, delete, duplicate, or rename a notebook check the checkbox next to it and an array of controls will appear at the top of the notebook list (as seen below).  You can also use the same operations on directories and files when applicable.</p>
-<p><img src="../images/dashboard_files_tab_btns.png" alt="Buttons: Duplicate, rename, shutdown, delete, new, refresh"></p>
-
+<h4 id="1.-Open-the-Anaconda-Navigator-Desktop-software">1. Open the Anaconda-Navigator Desktop software<a class="anchor-link" href="#1.-Open-the-Anaconda-Navigator-Desktop-software">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -11844,32 +11828,11 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To see all of your running notebooks along with their directories, click on the "Running" tab:</p>
-<p><img src="../images/dashboard_running_tab.png" alt="Jupyter dashboard running tab"></p>
-<p>This view provides a convenient way to track notebooks that you start as you navigate the file system in a long running notebook server.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Overview-of-the-Notebook-UI">Overview of the Notebook UI<a class="anchor-link" href="#Overview-of-the-Notebook-UI">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If you create a new notebook or open an existing one, you will be taken to the notebook user interface (UI). This UI allows you to run code and author notebook documents interactively. The notebook UI has the following main areas:</p>
 <ul>
-<li>Menu</li>
-<li>Toolbar</li>
-<li>Notebook area and cells</li>
+<li>Open <code>anaconda3</code> directory in your user folder.</li>
+<li>Double-click the <code>Anaconda-Navigator</code> program</li>
 </ul>
-<p>The notebook has an interactive tour of these elements that can be started in the "Help:User Interface Tour" menu item.</p>
+<p><img src="attachment:anaconda-navigator-apps-2.png" alt="anaconda-navigator-apps-2.png"></p>
 
 </div>
 </div>
@@ -11878,7 +11841,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Modal-editor">Modal editor<a class="anchor-link" href="#Modal-editor">&#182;</a></h2>
+<h4 id="2.1-Launch-JupyterLab">2.1 <code>Launch</code> JupyterLab<a class="anchor-link" href="#2.1-Launch-JupyterLab">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -11886,7 +11849,17 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Starting with IPython 2.0, the Jupyter Notebook has a modal user interface. This means that the keyboard does different things depending on which mode the Notebook is in. There are two modes: edit mode and command mode.</p>
+<ul>
+<li>To launch the JupyterLab software, click the <em>launch</em> button in the Anaconda-Navigator interface (shown above)</li>
+<li>Using the file browser in JupyterLab find the notebook you want to open and double-click on the icon.</li>
+</ul>
+<p><img src='../images/jupyterlab.png'></p>
+<p><strong>NOTE:</strong></p>
+<ul>
+<li><p>You can also launch <code>JupyterLab</code> by typing, in the <code>Terminal</code> or <code>Anaconda Prompt</code>,:</p>
+<p>$ jupyterlab</p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -11895,7 +11868,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Edit-mode">Edit mode<a class="anchor-link" href="#Edit-mode">&#182;</a></h3>
+<h4 id="2.2-Launch-Jupyter-Notebook">2.2 <code>Launch</code> Jupyter Notebook<a class="anchor-link" href="#2.2-Launch-Jupyter-Notebook">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -11903,9 +11876,17 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Edit mode is indicated by a green cell border and a prompt showing in the editor area:</p>
-<p><img src="../images/edit_mode.png" alt="Jupyter cell with green border"></p>
-<p>When a cell is in edit mode, you can type into the cell, like a normal text editor.</p>
+<ul>
+<li>To launch the Jupyter Notebook software, click the <em>launch</em> button in the Anaconda-Navigator interface (shown above)</li>
+<li>A Terminal windows will open and the default web browser window will also open displying the Jupyter Dashboard (shown above)</li>
+</ul>
+<p><img src='../images/jupyterlab.png'></p>
+<p><strong>NOTE</strong></p>
+<ul>
+<li>It is <strong>NOT</strong> possible to double click a Jupyter Notebook to open it.</li>
+<li>The <code>Terminal</code> window openned by the Jupyter notebook software <strong>MUST</strong> remain open while using the Jupyter Notebook.</li>
+<li>You <em>can</em> download the <a href="https://nwhitehead.github.io/pineapple/"><code>Pineapple</code></a> program  that enables double-click launch of Jupyter Notebooks. The <a href="https://nteract.io"><code>nteract</code></a> project can also be used to work with Jupyter Notebooks. Both are MacOS only</li>
+</ul>
 
 </div>
 </div>
@@ -11914,17 +11895,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="alert alert-success">
-Enter edit mode by pressing `Enter` or using the mouse to click on a cell's editor area.
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Command-mode">Command mode<a class="anchor-link" href="#Command-mode">&#182;</a></h3>
+<h4 id="3.-From-the-command-line">3. From the command line<a class="anchor-link" href="#3.-From-the-command-line">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -11932,9 +11903,19 @@ Enter edit mode by pressing `Enter` or using the mouse to click on a cell's edit
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Command mode is indicated by a grey cell border with a blue left margin:</p>
-<p><img src="../images/command_mode.png" alt="Jupyter cell with blue &amp; grey border"></p>
-<p>When you are in command mode, you are able to edit the notebook as a whole, but not type into individual cells. Most importantly, in command mode, the keyboard is mapped to a set of shortcuts that let you perform notebook and cell actions efficiently. For example, if you are in command mode and you press <code>c</code>, you will copy the current cell - no modifier is needed.</p>
+<p>Another way to launch the Jupyter notebook is to do it from the command line by typing:</p>
+
+<pre><code>jupyter notebook
+
+</code></pre>
+<p>The notebook will open in your default browser. You can also specify which browser to use:</p>
+
+<pre><code>jupyter notebook --browser=chrome
+
+</code></pre>
+<p>By default, the notebook server starts on port 8888, or, if this port is not available, to the next available one, such as 9999. You may also specify a port manually:</p>
+
+<pre><code>jupyter notebook --port 9999</code></pre>
 
 </div>
 </div>
@@ -11943,36 +11924,14 @@ Enter edit mode by pressing `Enter` or using the mouse to click on a cell's edit
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="alert alert-error">
-Don't try to type into a cell in command mode; unexpected things will happen!
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div class="alert alert-success">
-Enter command mode by pressing `Esc` or using the mouse to click *outside* a cell's editor area.
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Mouse-navigation">Mouse navigation<a class="anchor-link" href="#Mouse-navigation">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>All navigation and actions in the Notebook are available using the mouse through the menubar and toolbar, which are both above the main Notebook area:</p>
-<p><img src="../images/menubar_toolbar.png" alt="Jupyter notebook menus and toolbar"></p>
+<p><strong>Browser Compatibility</strong></p>
+<p>The Jupyter Notebook is officially supported by the latest stable versions of the following browsers:</p>
+<ul>
+<li>Chrome</li>
+<li>Safari</li>
+<li>Firefox</li>
+</ul>
+<p>The is mainly due to the notebook’s usage of WebSockets and the flexible box model.</p>
 
 </div>
 </div>
@@ -11981,8 +11940,14 @@ Enter command mode by pressing `Esc` or using the mouse to click *outside* a cel
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The first idea of mouse based navigation is that <strong>cells can be selected by clicking on them.</strong> The currently selected cell gets a grey or green border depending on whether the notebook is in edit or command mode. If you click inside a cell's editor area, you will enter edit mode. If you click on the prompt or output area of a cell you will enter command mode.</p>
-<p>If you are running this notebook in a live session (not on <a href="http://nbviewer.jupyter.org">http://nbviewer.jupyter.org</a>) try selecting different cells and going between edit and command mode. Try typing into a cell.</p>
+<h3 id="To-close-a-Jupyter-Notebook">To close a Jupyter Notebook<a class="anchor-link" href="#To-close-a-Jupyter-Notebook">&#182;</a></h3><ul>
+<li>From the (Jupyter) <em>File</em> menu select close and halt on any open notebooks<ul>
+<li>Or from the <em>Running</em> tab in the Jupyter Deshboard click the running tab and shutdown any running notebooks.</li>
+</ul>
+</li>
+<li>Close the Jupyter Dashboard (or quit your browser)</li>
+<li>Close the Terminal window hosting the Jupyter server or you can kill Jupyter by hitting “Ctrl + C” in the terminal window</li>
+</ul>
 
 </div>
 </div>
@@ -11991,8 +11956,7 @@ Enter command mode by pressing `Esc` or using the mouse to click *outside* a cel
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The second idea of mouse based navigation is that <strong>cell actions usually apply to the currently selected cell</strong>. Thus if you want to run the code in a cell, you would select it and click the <button class='btn btn-default btn-xs'><i class="fa fa-step-forward icon-step-forward"></i></button> button in the toolbar or the "Cell:Run" menu item. Similarly, to copy a cell you would select it and click the <button class='btn btn-default btn-xs'><i class="fa fa-copy icon-copy"></i></button> button in the toolbar or the "Edit:Copy" menu item. With this simple pattern, you should be able to do most everything you need with the mouse.</p>
-<p>Markdown cells have one other state that can be modified with the mouse. These cells can either be rendered or unrendered. When they are rendered, you will see a nice formatted representation of the cell's contents. When they are unrendered, you will see the raw text source of the cell. To render the selected cell with the mouse, click the <button class='btn btn-default btn-xs'><i class="fa fa-step-forward icon-step-forward"></i></button> button in the toolbar or the "Cell:Run" menu item. To unrender the selected cell, double click on the cell.</p>
+<h2 id="Jupyter-Architecture">Jupyter Architecture<a class="anchor-link" href="#Jupyter-Architecture">&#182;</a></h2><p>The Jupyter architecture is comprised of three primary components: kernel, notebook document format, and an interactive computing protocol.</p>
 
 </div>
 </div>
@@ -12001,17 +11965,7 @@ Enter command mode by pressing `Esc` or using the mouse to click *outside* a cel
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Keyboard-Navigation">Keyboard Navigation<a class="anchor-link" href="#Keyboard-Navigation">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The modal user interface of the Jupyter Notebook has been optimized for efficient keyboard usage. This is made possible by having two different sets of keyboard shortcuts: one set that is active in edit mode and another in command mode.</p>
-<p>The most important keyboard shortcuts are <code>Enter</code>, which enters edit mode, and <code>Esc</code>, which enters command mode.</p>
-<p>In edit mode, most of the keyboard is dedicated to typing into the cell's editor. Thus, in edit mode there are relatively few shortcuts.  In command mode, the entire keyboard is available for shortcuts, so there are many more.  The <code>Help</code>-&gt;<code>Keyboard Shortcuts</code> dialog lists the available shortcuts.</p>
+<h3 id="Kernels">Kernels<a class="anchor-link" href="#Kernels">&#182;</a></h3><p>"Kernels are processes that run interactive code in a particular programming language and return output to the user. Kernels also respond to tab completion and introspection requests." There are kernels for python 3, python 2, R, Julia, javascript, perl, and <a href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">more</a></p>
 
 </div>
 </div>
@@ -12020,15 +11974,27 @@ Enter command mode by pressing `Esc` or using the mouse to click *outside* a cel
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We recommend learning the command mode shortcuts in the following rough order:</p>
-<ol>
-<li>Basic navigation: <code>enter</code>, <code>shift-enter</code>, <code>up/k</code>, <code>down/j</code></li>
-<li>Saving the notebook: <code>s</code></li>
-<li>Change Cell types: <code>y</code>, <code>m</code>, <code>1-6</code>, <code>t</code></li>
-<li>Cell creation: <code>a</code>, <code>b</code></li>
-<li>Cell editing: <code>x</code>, <code>c</code>, <code>v</code>, <code>d</code>, <code>z</code></li>
-<li>Kernel operations: <code>i</code>, <code>0</code> (press twice)</li>
-</ol>
+<h2 id="Anatomy-of-a-Jupyter-Notebook">Anatomy of a Jupyter Notebook<a class="anchor-link" href="#Anatomy-of-a-Jupyter-Notebook">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src='../images/notebook_components.png'></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sources:</p>
+<ul>
+<li>jupyter.org</li>
+</ul>
 
 </div>
 </div>
