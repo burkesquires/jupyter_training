@@ -1,7 +1,7 @@
-# Interactive scientific Notebook - Jupyter Training
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/burkesquires/jupyter_training_2020/HEAD?urlpath=lab)
 
-## NIEHS November 2019
+# Interactive Scientific Notebook - Jupyter Training
 
-Attendees please see the feedback survey here: https://www.research.net/r/112019_jupyter
+## NIEHS 2022
 
 Questions? Comments? Please contact me here: https://about.me/rburkesquires 

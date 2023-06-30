@@ -1,0 +1,21 @@
+users:
+    LucianaMarques:
+        can:
+            - tag
+special:
+  everyone:
+    can: 
+      - say
+      - tag
+      - untag
+      - close
+    config:
+      tag:
+        only:
+           - async/await
+           - backported
+           - help wanted
+           - documentation
+           - notebook
+           - tab-completion
+           - windows
